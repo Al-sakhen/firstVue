@@ -20,4 +20,16 @@ export const store = new Vuex.Store({
     ]
   },
 
+  getters:{
+    modifiedInfo: (state)=>{
+      let studentInfo = state.students.map( (student)=>{
+        return{
+          name: 'Student name -->  '+ student.name,
+          age: 'Age:  ' + student.age,
+        }
+      } )
+      return studentInfo
+    }
+  }
+
 })

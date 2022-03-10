@@ -1,0 +1,3 @@
+getterrs ==> to get the data and update on them ==> in the store.js
+
+can send the modified data to another components and response them in computed
