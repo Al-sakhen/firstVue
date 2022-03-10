@@ -3,9 +3,10 @@
       <h1>Students</h1>
       <ul>
         <li v-for="(student , index) in newStudents" :key="index">
-          <h3>{{student.name}} === {{student.age}}</h3>
+          <h3>{{student.name}} === {{student.age}} == {{student.salary}}</h3>
         </li>
       </ul>
+      <button @click="addToSalary">ADD</button>
     </div>
 </template>
 
@@ -22,7 +23,7 @@ export default{
 
   // get students from store
   computed: {
-    students(){
+    students():Number {
       return this.$store.state.students;
     },
     newStudents(){
@@ -31,6 +32,12 @@ export default{
 
     
   },
+  methods:{
+    addToSalary(){
+       this.$store.commit('increaseSalary')
+      
+    }
+  }
   
   
 }

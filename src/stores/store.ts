@@ -13,9 +13,9 @@ export const store = new Vuex.Store({
     ],
 
     students:[
-      {name:'sawsan' , age : 23},
-      {name:'shahed' , age : 23},
-      {name:'hanan' , age : 23},
+      {name:'sawsan' , age : 23 , salary:4000},
+      {name:'shahed' , age : 23, salary:5000},
+      {name:'hanan' , age : 23 , salary:6000},
 
     ]
   },
@@ -26,10 +26,17 @@ export const store = new Vuex.Store({
         return{
           name: 'Student name -->  '+ student.name,
           age: 'Age:  ' + student.age,
+          salary: 'Salary:  ' + student.salary,
+          
         }
       } )
       return studentInfo
     }
+  },
+  mutations:{
+    increaseSalary : (state)=>{
+      return state.students.forEach(student => {
+        student.salary += 200
+    })},
   }
-
 })
